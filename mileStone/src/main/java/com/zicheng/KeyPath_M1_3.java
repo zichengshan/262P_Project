@@ -16,11 +16,7 @@ public class KeyPath_M1_3 {
         JSONObject jObject = readFile(args[0]);
 
         // JSONPointer
-<<<<<<< Updated upstream
         JSONPointer pointer = new JSONPointer(args[1]);
-=======
-        JSONPointer pointer = new JSONPointer("/catalog/book");
->>>>>>> Stashed changes
 
         // object is the subject of querying
         Object object = pointer.queryFrom(jObject);
