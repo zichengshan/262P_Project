@@ -1,4 +1,4 @@
-{"book": [
+[
     {
         "author": "Gambardella, Matthew",
         "price": 44.95,
@@ -107,4 +107,4 @@
         "title": "Visual Studio 7: A Comprehensive Guide",
         "publish_date": "2001-04-16"
     }
-]}
+]

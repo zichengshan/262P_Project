@@ -10,7 +10,7 @@ public class XMLtoJSON_M1_1 {
     public static void main(String[] args) throws IOException {
 
         // Convert XML to JSON
-        JSONObject object = readFile("books.xml");
+        JSONObject object = readFile(args[0]);
 
         // Write JSON object to file
         writeFile("file1.json", object);
@@ -46,7 +46,7 @@ public class XMLtoJSON_M1_1 {
     private static void writeFile(String fileName, JSONObject jo) throws IOException {
         BufferedWriter out = new BufferedWriter(new FileWriter(fileName));
         out.write(jo.toString(4));
-        out.flush();
         out.close();
+        System.out.println("Success!");
     }
 }

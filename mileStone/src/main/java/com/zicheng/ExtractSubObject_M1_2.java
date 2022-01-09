@@ -15,15 +15,16 @@ public class ExtractSubObject_M1_2 {
     public static void main(String[] args)  throws IOException {
 
         // Convert XML to JSONObject
-        JSONObject jObject = readFile("books.xml");
+        JSONObject jObject = readFile(args[0]);
 
         // JSONPointer
-        JSONPointer pointer = new JSONPointer("/catalog");
+        JSONPointer pointer = new JSONPointer(args[1]);
 
         // object is the subject of querying
         Object object = pointer.queryFrom(jObject);
         // Call the method to write the sub-object to a JSON file
         writeFile("file2.json", object);
+        System.out.println("success");
     }
 
     /**

@@ -7,15 +7,16 @@ import java.io.*;
 /**
  * References:
  *  Key Path: https://www.ibm.com/docs/en/qradar-on-cloud?topic=editor-json-keypath-expressions
+ *  param example: "books.xml /catalog/book/1"
  */
 public class KeyPath_M1_3 {
     public static void main(String[] args) throws IOException {
 
         // Convert XML to JSON
-        JSONObject jObject = readFile("books.xml");
+        JSONObject jObject = readFile(args[0]);
 
         // JSONPointer
-        JSONPointer pointer = new JSONPointer("/catalog/book/1");
+        JSONPointer pointer = new JSONPointer(args[1]);
 
         // object is the subject of querying
         Object object = pointer.queryFrom(jObject);
