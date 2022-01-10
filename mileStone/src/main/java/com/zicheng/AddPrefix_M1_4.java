@@ -63,35 +63,48 @@ public class AddPrefix_M1_4 {
         output.close();
     }
 
-
+    /**
+     * Add prefix to each key
+     * @param object
+     * @param str
+     * @return
+     */
     private static Object addPrefix(Object object, String str){
         if(object instanceof JSONObject){
             JSONObject jsonObject = (JSONObject) object;
+
+            // If it is a JSONObject, save all the keys into array
             List<String> list = new ArrayList<>();
             for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
                 String key = it.next();
                 list.add(key);
             }
-
+            // iterate the keys
             for(String key : list){
+            // Get the current object and recall teh addprefix() function to make its inner keys get the prefix added
                 Object subObject = jsonObject.get(key);
                 Object newObject = addPrefix(subObject, str);
+            // Remove the old object and put the new object
                 jsonObject.remove(key);
                 String newKey = str + key;
                 jsonObject.put(newKey, newObject);
             }
-            return (Object) jsonObject;
+            return jsonObject;
         }
         else if(object instanceof JSONArray){
             JSONArray jsonArray = (JSONArray) object;
-            int index = 0;
+            // position is used to keep track of the Object we modified
+            int position = 0;
+            // Iterate the jsonArray and call the addprefix() function to make its inner object's keys get the prefix added
             for (Iterator<Object> it = jsonArray.iterator(); it.hasNext(); ) {
                 Object subObject = it.next();
                 Object newObject = addPrefix(subObject, str);
-                jsonArray.put(index,newObject);
-                index++;
+                
+                // Replace the old JSONArray with the new one
+                jsonArray.put(position,newObject);
+                position++;
             }
-            return (Object) jsonArray;
+            return jsonArray;
         }
         else{
             return object;
