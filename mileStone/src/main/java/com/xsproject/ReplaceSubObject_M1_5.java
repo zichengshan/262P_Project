@@ -9,8 +9,8 @@ import java.io.*;
 public class ReplaceSubObject_M1_5 {
     public static void main(String[] args) throws IOException {
         // Get the key path and save it into keys array
-        //args example: /catalog/book/0
-        String keyPath = args[0];
+        //args example: books.xml /catalog/book/0
+        String keyPath = args[1];
         String[] Key_space_included = keyPath.split("/");
 
         // After the split, a space will be the first element because there is a "/" at the start of ketPath
@@ -25,7 +25,7 @@ public class ReplaceSubObject_M1_5 {
         myObject.put("genre", "Science");
 
         // Convert XML to JSON
-        JSONObject object = readFile("books.xml");
+        JSONObject object = readFile(args[0]);
 
         // Call the function to replace the target object with the new one
         Object replaced_object = replace(keys, object, myObject);
