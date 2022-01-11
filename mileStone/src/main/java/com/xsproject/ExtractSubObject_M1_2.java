@@ -12,6 +12,7 @@ import java.io.*;
     It can be related to what XPath does for an XML document.
     Through the use of JSON Pointer, we can fetch data from and alter a JSON file.
     Reference: https://github.com/susantamoh84/tutorials/blob/e208e0db03f371e7ec75065b2ab51e9c9b9eab0b/json/src/main/java/com/baeldung/jsonpointer/JsonPointerCrud.java
+    param example: books.xml /catalog/book
  */
 public class ExtractSubObject_M1_2 {
 
