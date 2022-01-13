@@ -66,7 +66,12 @@ public class AddPrefix_M1_4 {
         output.close();
     }
 
-
+    /**
+     * addPrefix() is used to add prefix to object
+     * @param object
+     * @param str
+     * @return
+     */
     private static Object addPrefix(Object object, String str){
         if(object instanceof JSONObject){
             JSONObject jsonObject = (JSONObject) object;

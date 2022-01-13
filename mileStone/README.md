@@ -24,11 +24,11 @@
 
   Firstly, set working directory to 'xsproject'. 
 
-  1. For task1, Put "books.xml" as arguments to run.
-  2. For task 2, Put "books.xml /catalog/book" as arguments to run.
-  3. For task 3, Put "books.xml /catalog/book/1" as arguments to run.
-  4. For task 4, Put "books.xml" as arguments to run.
-  5. For task 5, Put "books.xml /catalog/book/0" as arguments to run.
+  1. For task1, Put "../../../resources/smallXml1.xml" as arguments to run.
+  2. For task 2, Put "../../../resources/smallXml1.xml /catalog/book" as arguments to run.
+  3. For task 3, Put "../../../resources/smallXml1.xml /catalog/book/1" as arguments to run.
+  4. For task 4, Put "../../../resources/smallXml1.xml" as arguments to run.
+  5. For task 5, Put "../../../resources/smallXml1.xml /catalog/book/0" as arguments to run.
 
 - The project can handle with most XML files. But when it try to process a GB-scale file it will stuck in the progress with no result.
 
