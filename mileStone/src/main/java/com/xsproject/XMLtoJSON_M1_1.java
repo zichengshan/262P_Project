@@ -2,9 +2,11 @@ package com.xsproject;
 
 import org.json.JSONObject;
 import org.json.XML;
-
 import java.io.*;
 
+/**
+ * param example: ../../../resources/smallXml1.xml
+ */
 public class XMLtoJSON_M1_1 {
     public static void main(String[] args) throws IOException {
 

@@ -10,7 +10,7 @@ import java.io.*;
 /**
  * References:
  *  Key Path: https://www.ibm.com/docs/en/qradar-on-cloud?topic=editor-json-keypath-expressions
- *  param example: "books.xml /catalog/book/1"
+ *  param example: ../../../resources/smallXml1.xml /catalog/book/1
  */
 public class KeyPath_M1_3 {
     public static void main(String[] args) throws IOException {
@@ -23,6 +23,7 @@ public class KeyPath_M1_3 {
 
         // object is the subject of querying
         Object object = pointer.queryFrom(jObject);
+
 
         // Call the method to write the sub-object to a JSON file
         writeFile("file3.json", object);
@@ -38,7 +39,8 @@ public class KeyPath_M1_3 {
         // Use the StringBuild to concat strings
         StringBuilder builder = new StringBuilder();
         File file = new File(fileName);
-        BufferedReader reader = new BufferedReader(new FileReader(file));
+        BufferedReader reader = null;
+        reader = new BufferedReader(new FileReader(file));
         String strLine = reader.readLine();
         while(strLine != null){
             builder.append(strLine.trim() + " ");

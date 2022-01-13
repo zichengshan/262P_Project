@@ -3,11 +3,14 @@ package com.xsproject;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+/**
+ * param example: ../../../resources/smallXml1.xml
+ */
 
 public class AddPrefix_M1_4 {
     public static void main(String[] args) throws IOException {

@@ -1,0 +1,9 @@
+{
+    "author": "Gambardella, Matthew",
+    "price": 44.95,
+    "genre": "Computer",
+    "description": "An in-depth look at creating applications with XML.",
+    "id": "bk101",
+    "title": "XML Developer's Guide",
+    "publish_date": "2000-10-01"
+}

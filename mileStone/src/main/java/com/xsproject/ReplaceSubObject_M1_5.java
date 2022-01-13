@@ -3,13 +3,19 @@ package com.xsproject;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
-
 import java.io.*;
 
+/**
+ * param example: ../../../resources/smallXml1.xml /catalog/book/0
+ */
 public class ReplaceSubObject_M1_5 {
     public static void main(String[] args) throws IOException {
-        // Get the key path and save it into keys array
         //args example: books.xml /catalog/book/0
+
+        // Convert XML to JSON
+        JSONObject object = readFile(args[0]);
+
+        // Get the key path and save it into keys array
         String keyPath = args[1];
         String[] Key_space_included = keyPath.split("/");
 
@@ -23,9 +29,6 @@ public class ReplaceSubObject_M1_5 {
         myObject.put("author", "Chenxv");
         myObject.put("price", "15");
         myObject.put("genre", "Science");
-
-        // Convert XML to JSON
-        JSONObject object = readFile(args[0]);
 
         // Call the function to replace the target object with the new one
         Object replaced_object = replace(keys, object, myObject);

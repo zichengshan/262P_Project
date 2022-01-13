@@ -11,8 +11,8 @@ import java.io.*;
     JSON Pointer defines a String that can be used for accessing values on a JSON document.
     It can be related to what XPath does for an XML document.
     Through the use of JSON Pointer, we can fetch data from and alter a JSON file.
-    Reference: https://github.com/susantamoh84/tutorials/blob/e208e0db03f371e7ec75065b2ab51e9c9b9eab0b/json/src/main/java/com/baeldung/jsonpointer/JsonPointerCrud.java
-    param example: books.xml /catalog/book
+
+    param example: ../../../resources/smallXml1.xml /catalog/book
  */
 public class ExtractSubObject_M1_2 {
 
@@ -26,6 +26,7 @@ public class ExtractSubObject_M1_2 {
 
         // object is the subject of querying
         Object object = pointer.queryFrom(jObject);
+
         // Call the method to write the sub-object to a JSON file
         writeFile("file2.json", object);
         System.out.println("success");
