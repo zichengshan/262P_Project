@@ -22,6 +22,8 @@
 
 - Run file example:
 
+  Firstly, set working directory to 'xsproject'. 
+
   1. For task1, Put "books.xml" as arguments to run.
   2. For task 2, Put "books.xml /catalog/book" as arguments to run.
   3. For task 3, Put "books.xml /catalog/book/1" as arguments to run.
