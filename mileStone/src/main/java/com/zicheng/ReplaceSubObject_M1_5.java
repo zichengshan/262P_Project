@@ -9,7 +9,7 @@ import java.io.*;
 public class ReplaceSubObject_M1_5 {
     public static void main(String[] args) throws IOException {
         // Get the key path and save it into keys array
-        String keyPath = "/catalog/book/0";
+        String keyPath = "/catalog/book";
         String[] Key_space_included = keyPath.split("/");
 
         // After the split, a space will be the first element because there is a "/" at the start of ketPath
