@@ -21,9 +21,19 @@
   5. Read an XML file into a JSON object, replace a sub-object on a certain key path with another JSON object that you construct, then write the result on disk as a JSON file. 
 
 - Run file example:
+
   1. For task1, Put "books.xml" as arguments to run.
+
   2. For task 2, Put "books.xml /catalog/book" as arguments to run.
+
   3. For task 3, Put "books.xml /catalog/book/1" as arguments to run.
+
   4. For task 4, Put "books.xml" as arguments to run.
+
   5. For task 5, Put "books.xml /catalog/book/0" as arguments to run.
+
+     ![Put argument and set working directory](/Users/chenxuwang/Documents/graduate/262P/Screen Shot 2022-01-12 at 10.37.48 PM.png)
+
 - The project can handle with most XML files. But when it try to process a GB-scale file it will stuck in the progress with no result.
+
+  
