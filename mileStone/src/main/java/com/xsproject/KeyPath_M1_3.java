@@ -21,6 +21,21 @@ public class KeyPath_M1_3 {
         // JSONPointer
         JSONPointer pointer = new JSONPointer(args[1]);
 
+        String[] pathArr = pointer.toString().substring(1).split("/");
+        for (int i = 0; i < pathArr.length; i++){
+            System.out.println(pathArr[i]);
+        }
+
+        System.out.println("--------------");
+        System.out.println();
+
+
+
+
+
+
+
+
         // object is the subject of querying
         Object object = pointer.queryFrom(jObject);
 

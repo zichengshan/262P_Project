@@ -10,31 +10,46 @@ import java.io.*;
  */
 public class ReplaceSubObject_M1_5 {
     public static void main(String[] args) throws IOException {
-        //args example: books.xml /catalog/book/0
-
-        // Convert XML to JSON
-        JSONObject object = readFile(args[0]);
-
-        // Get the key path and save it into keys array
-        String keyPath = args[1];
-        String[] Key_space_included = keyPath.split("/");
-
-        // After the split, a space will be the first element because there is a "/" at the start of ketPath
-        String [] keys = new String[Key_space_included.length-1];
-        for(int i = 0; i < keys.length; i++)
-            keys[i] = Key_space_included[i+1];
-
-        // Construct our new object to replace the target object
-        JSONObject myObject = new JSONObject();
-        myObject.put("author", "Chenxv");
-        myObject.put("price", "15");
-        myObject.put("genre", "Science");
-
-        // Call the function to replace the target object with the new one
-        Object replaced_object = replace(keys, object, myObject);
+//        //args example: books.xml /catalog/book/0
+//
+//        // Convert XML to JSON
+//        JSONObject object = readFile(args[0]);
+//
+//        // Get the key path and save it into keys array
+//        String keyPath = args[1];
+//        String[] Key_space_included = keyPath.split("/");
+//
+//        // After the split, a space will be the first element because there is a "/" at the start of ketPath
+//        String [] keys = new String[Key_space_included.length-1];
+//        for(int i = 0; i < keys.length; i++)
+//            keys[i] = Key_space_included[i+1];
+//
+//        // Construct our new object to replace the target object
+//        JSONObject myObject = new JSONObject();
+//        myObject.put("author", "Chenxv");
+//        myObject.put("price", "15");
+//        myObject.put("genre", "Science");
+//
+//        // Call the function to replace the target object with the new one
+//        Object replaced_object = replace(keys, object, myObject);
 
         // Write JSON object to file
-        writeFile("file5.json", replaced_object);
+//        writeFile("file5.json", replaced_object);
+        String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"+
+                "<contact>\n"+
+                "  <nick>Crista </nick>\n"+
+                "  <name>Crista Lopes</name>\n" +
+                "  <address>\n" +
+                "    <street>Ave of Nowhere</street>\n" +
+                "    <zipcode>92614</zipcode>\n" +
+                "  </address>\n" +
+                "</contact>";
+
+        JSONObject xmlObject =  XML.toJSONObject(xmlString);
+        String[] keyPath = new String[]{"contact", "address", "street"};
+//        JSONObject object = new JSONObject();
+        JSONObject replacement = XML.toJSONObject("<street>Ave of the Arts</street>\n");
+        System.out.println( replace(keyPath, xmlObject, replacement));
     }
 
     /**
@@ -132,7 +147,7 @@ public class ReplaceSubObject_M1_5 {
             }
         }
         else{
-            return (Object) object;
+            return (Object) myObject;
         }
     }
 }
